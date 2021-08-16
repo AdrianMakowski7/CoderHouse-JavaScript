@@ -1,17 +1,26 @@
-class cliente{
-  constructor(sexo,edad,nombre,apellido,pais){
-    this.sex = sexo;
-    this.age = edad;
-    this.name = nombre;
-    this.surname = apellido;
-    this.country = pais;
-    this.info= "Hola "+ this.name+" "+this.surname+", tienes "+this.age+" años, eres del sexo "+this.sex+" y de "+this.country;
+class Usuarios{
+  constructor(nombre, apellido, documento, pais, edad){
+    this.nombre = nombre
+    this.apellido = apellido
+    this.documento = documento
+    this.pais = pais
+    this.edad = parseFloat(edad)
   }
 }
-let cliente1 = new cliente("Masculino", 27, "Adrian", "Makowski", "Uruguay");
-let cliente2 = new cliente("Masculino", 24, "Carlos", "Fernandez", "Chile");
-let cliente3 = new cliente("Femenino", 42, "Maria", "Rodriguez", "Argentina");
+let arrayUsuarios = [];
+do{
+  var newUsuario = prompt('Ingresar nombre del nuevo usuario o FIN para terminar de agregar');
+  if(newUsuario === "FIN" || newUsuario === "fin" || newUsuario === "Fin"){
+    break;
+  }else{
+    nombre1 = newUsuario;
+    var apellido1 = prompt('Ingrese el apellido del nuevo usuario');
+    var documento1 = prompt('Ingrese el docuemnto de identidad del nuevo usuario');
+    var pais1 = prompt('Ingrese el pais del nuevo usuario');
+    var edad1 = prompt('Ingrese la edad del nuevo usario')
+    arrayUsuarios.push(new Usuarios(nombre1, apellido1, documento1, pais1, edad1));
+  }
+}
+while (newUsuario != "FIN" || newUsuario != "fin" || newUsuario != "Fin");
 
-document.write(cliente1.info + "<br>")
-document.write(cliente2.info + "<br>")
-document.write(cliente3.info + "<br>")
+console.log(arrayUsuarios);
