@@ -1,31 +1,22 @@
-form{
-	width:300px;
-	padding:10px;
-	border-radius:15px;
-	margin:auto;
-	background-color:rgb(15, 55, 108);
-  color: white;
+.grid-conteiner{
+	display: grid;
+	grid-template-rows: 30px;
+	grid-template-columns: repeat(4, minmax(min-content,max-content));
+	grid-auto-rows: 30px;
+	text-align: center;
 }
-form label{
-	width:90px;
-	font-weight:bold;
-	display:inline-block;
+.grid-conteiner .grid-item{
+	margin-left: 23;
 }
-h1{
-  text-align: center;
+.grid-conteiner p{
+	margin: 10px;
+	font-size: 20px;
 }
-.list {
-	margin: auto;
+.grid-conteiner h4{
+	font-size: 21px;
+	font-weight: 900;
 }
-form .btn{
-	margin: 7px 12px 0px 105px;
-}
-.green{
-	color: green;
-}
-.red{
-	color: red;
-}
-.resultado{
-	margin: 7px 12px 0px 64px;
+.title{
+	font-weight: 900;
+	font-size: 19px;
 }

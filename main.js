@@ -1,38 +1,61 @@
+let usuarios= [{
+  usuario: "Carlos23",
+  nombre: "Carlos Rodriguez",
+  edad: 31
+},{
+  usuario: "Marcos51",
+  nombre: "Marcos Fernandez",
+  edad: 82
+},{
+  usuario: "Ezeeeee",
+  nombre: "Ezequiel Gonzalez",
+  edad: 18
+},{
+  usuario: "Maritoel1",
+  nombre: "Mario Garrido",
+  edad: 52
+},{
+  usuario: "Karita",
+  nombre: "Karen Porras",
+  edad: 41
+},{
+  usuario: "Mica12",
+  nombre: "Micaela Rodriguez",
+  edad: 21
+},{
+  usuario: "Fran007",
+  nombre: "Franco Alaniz",
+  edad: 32
+},{
+  usuario: "MoniMedi",
+  nombre: "Monica Medina",
+  edad: 19
+},{
+  usuario: "Anacletaparavos",
+  nombre: "Anacleta Perez",
+  edad: 74
+}];
 
-const usuario = document.getElementById("usuario");
-const nombre = document.getElementById("nombre");
-const edad = document.getElementById("edad");
-const botonEnviar = document.getElementById("btnEnviar");
-const resultado = document.querySelector(".resultado")
+const boton = document.querySelector(".boton-confirmar")
 
-botonEnviar.addEventListener("click",(e)=>{
-  e.preventDefault();
-  let error = validarCampos();
-  if (error[0]) { 
-    resultado.innerHTML = error[1];
-    resultado.classList.add("red")
-  } else {
-    resultado.innerHTML = "Confirmado correctamente"
-    resultado.classList.add("green")
-    resultado.classList.remove("red")
+for (user in usuarios){
+  let datos = usuarios[user];
+  let usuario = datos["usuario"];
+  let nombre = datos["nombre"];
+  let edad = datos["edad"];
+  let htmlCode = '<div class="grid-item usuario">'+ usuario + '</div><div class="grid-item nombre">' + nombre + '</div><div class="grid-item edad">' + edad + '</div><div class="grid-item edad title"><div class="grid-item accesos"><select class="accesos1"><option value="Normal">Normal</option><option value="vip">VIP</option></select></div></div>';
+  document.querySelector(".grid-conteiner").innerHTML+= htmlCode;
+}
+
+boton.addEventListener("click", ()=>{
+  let confirmar = confirm("Seguro que desea confirmar?")
+  if (confirmar) {
+    document.body.removeChild(boton)
+    let elementos= document.querySelectorAll(".accesos");
+    let accesoElegido = document.querySelectorAll(".accesos1");
+    for(elemnto in elementos){
+      accesos = elementos[elemnto];
+      accesos.innerHTML = accesoElegido[elemnto].value;
+    }
   }
 })
-
-const validarCampos = ()=>{
-  let error = [];
-  if(usuario.value.length <5 || nombre.value.length > 30){
-    error[0] = true;
-    error[1] = "El Usuario debe tener entre 5 y 30 caracteres.";
-    return error;
-  }else if(nombre.value.length <5 || nombre.value.length > 30){
-    error[0] = true;
-    error[1] = "El Nombre debe tener entre 5 y 30 caracteres.";
-    return error;
-  } else if (edad.value < 18){
-    error[0] = true
-    error[1] = "Debes ser mayor de edad para acceder."
-    return error;
-}
-  error[0] = false;
-  return error;
-}
