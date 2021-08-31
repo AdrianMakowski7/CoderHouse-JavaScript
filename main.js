@@ -1,41 +1,38 @@
-class Usuarios{
-  constructor(nombre, apellido, edad){
-    this.nombre = nombre
-    this.apellido = apellido
-    this.edad = parseFloat(edad)
+
+const usuario = document.getElementById("usuario");
+const nombre = document.getElementById("nombre");
+const edad = document.getElementById("edad");
+const botonEnviar = document.getElementById("btnEnviar");
+const resultado = document.querySelector(".resultado")
+
+botonEnviar.addEventListener("click",(e)=>{
+  e.preventDefault();
+  let error = validarCampos();
+  if (error[0]) { 
+    resultado.innerHTML = error[1];
+    resultado.classList.add("red")
+  } else {
+    resultado.innerHTML = "Confirmado correctamente"
+    resultado.classList.add("green")
+    resultado.classList.remove("red")
   }
-}
-let arrayUsuarios = [];
-do{
-  var newUsuario = prompt('Ingresar nombre del nuevo usuario o FIN para terminar de agregar');
-  if(newUsuario === "FIN" || newUsuario === "fin" || newUsuario === "Fin"){
-    break;
-  }else{
-    nombre1 = newUsuario;
-    var apellido1 = prompt('Ingrese el apellido del nuevo usuario');
-    var edad1 = prompt('Ingrese la edad del nuevo usario')
-    arrayUsuarios.push(new Usuarios(nombre1, apellido1, edad1));
-  }
-}
-while (newUsuario != "FIN" || newUsuario != "fin" || newUsuario != "Fin");
+})
 
-//Filtro para menores de 18
-
-var usuariosMenores = arrayUsuarios.filter(usuario => usuario.edad < 18);
-var usuariosMayores = arrayUsuarios.filter(usuario => usuario.edad >= 18);
-
-if (usuariosMayores.length > 0){
-  document.write('A esta pagina tiene acceso : '); 
+const validarCampos = ()=>{
+  let error = [];
+  if(usuario.value.length <5 || nombre.value.length > 30){
+    error[0] = true;
+    error[1] = "El Usuario debe tener entre 5 y 30 caracteres.";
+    return error;
+  }else if(nombre.value.length <5 || nombre.value.length > 30){
+    error[0] = true;
+    error[1] = "El Nombre debe tener entre 5 y 30 caracteres.";
+    return error;
+  } else if (edad.value < 18){
+    error[0] = true
+    error[1] = "Debes ser mayor de edad para acceder."
+    return error;
 }
-for (var usuario of usuariosMayores){
-  let contenedor = document.createElement("div");
-  contenedor.innerHTML= usuario.nombre + " " + usuario.apellido + " por tener " + usuario.edad + " años";
-  document.body.appendChild(contenedor);
-};
-
-if (usuariosMenores.length > 0){
-  console.log('No es posible el acceso a esta pegina a :'); 
+  error[0] = false;
+  return error;
 }
-for (var usuario of usuariosMenores){
-  console.log(usuario.nombre + " " + usuario.apellido + " por tener " + usuario.edad + " años");
-};

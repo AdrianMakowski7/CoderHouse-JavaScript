@@ -1,4 +1,31 @@
-*{
-  background-color: black;
-  color: whitesmoke;
+form{
+	width:300px;
+	padding:10px;
+	border-radius:15px;
+	margin:auto;
+	background-color:rgb(15, 55, 108);
+  color: white;
+}
+form label{
+	width:90px;
+	font-weight:bold;
+	display:inline-block;
+}
+h1{
+  text-align: center;
+}
+.list {
+	margin: auto;
+}
+form .btn{
+	margin: 7px 12px 0px 105px;
+}
+.green{
+	color: green;
+}
+.red{
+	color: red;
+}
+.resultado{
+	margin: 7px 12px 0px 64px;
 }

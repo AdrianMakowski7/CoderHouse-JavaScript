@@ -4,11 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="main.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>Entregas</title>
 </head>
 <body>
-  
+  <h1>Incorporar eventos</h1>
+  <form>
+    <div>
+      <label for="usuario">Usuario: </label>
+      <input type="text" id="usuario" required>
+    </div>
+    <div>
+      <label for="nombre">Nombre: </label>
+      <input type="text" id="nombre" required>
+    </div>
+    <div>
+      <label for="edad">Edad: </label>
+      <input type="number" min="1" max="90" id=edad  required>
+    </div>
+    <input type="submit" value=" Confirmar " id="btnEnviar" class="btn">
+    <div class="resultado"></div>
+  </form>
+<script src="main.js"></script>
 </body>
 </html>
