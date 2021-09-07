@@ -1,19 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Entregas</title>
-</head>
-<body>
-  <h1>Generar HTML</h1>
-  <div class="grid-conteiner">
-    <div class="grid-item title">Usuarios</div><div class="grid-item nombre title"> Nombre </div><div class="grid-item edad title">Edad</div><div class="grid-item edad title">Acceso</div>
-  </div>
 
-  <button class="boton-confirmar"> Confirmar </button>
-<script src="main.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>iPortfolio Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v3.3.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <div class="contact formularioIngreso">
+    <div class="d-flex align-items-stretch">
+      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="name">Nombre: </label>
+            <input type="text" class="form-control" id="nombre">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="apellido">Apellido: </label>
+            <input type="text" class="form-control" id="apellido" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="nacimiento">Fecha de nacimiento: </label>
+            <input type="date" class="form-control" id="nacimiento" >
+          </div>
+          <div class="form-group col-md-6">
+            <label for="edad">Edad: </label>
+            <input type="number" class="form-control" id="edad" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="telefono">Telefono: </label>
+            <input type="tel" class="form-control" id="telefono" >
+          </div>
+          <div class="form-group col-md-4">
+            <label for="ciudad">Ciudad: </label>
+            <input type="text" class="form-control" id="ciudad" >
+          </div>
+          <div class="form-group col-md-4">
+            <label for="pais">Pais: </label>
+            <input type="text" class="form-control" id="pais" >
+          </div>
+        </div>
+        <div>
+          <h5>Link redes</h5>
+          <div class="row">
+            <div class="form-group col-md-3">
+              <label for="twitter">Twitter: </label>
+              <input type="url" class="form-control" id="twitter" >
+            </div>
+            <div class="form-group col-md-3">
+              <label for="instagram">Instagram: </label>
+              <input type="url" class="form-control" id="instagram" >
+            </div>
+            <div class="form-group col-md-3">
+              <label for="github">Github: </label>
+              <input type="url" class="form-control" id="github" >
+            </div>
+            <div class="form-group col-md-3">
+              <label for="linkedin">LinkedIn: </label>
+              <input type="url" class="form-control" id="linkedin" >
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="email">Email: </label>
+            <input type="email" class="form-control" id="email" >
+          </div>
+          <div class="form-group col-md-6">
+            <label for="cargo">Cargo: </label>
+            <input type="text" class="form-control" id="cargo" >
+          </div>
+        </div>
+        <div class="form-group">
+           <label for="descripcion">Acerca de mi: </label>
+          <textarea class="form-control" rows="2" id="descripcion"></textarea>
+        </div>
+
+        <div class="form-group">
+           <label for="resumen">Resumen educacional: </label>
+          <textarea class="form-control" rows="2" id="resumen"></textarea>
+        </div>
+        <div id="contenedorEducacion">
+          <h5>Educacion <button id="btnAgregarEdu">+</button></h5>
+          <div class="row"> 
+            <div class="form-group col-md-6">
+              <label for="Institucion">Institucion: </label>
+              <input type="text" class="form-control" id="Institucion" >
+            </div>
+            <div class="form-group col-md-6">
+              <label for="name">Años: </label>
+              <input type="text" class="form-control" id="ciudad" >
+            </div>
+          </div>
+        </div>
+        <div><button class="text-center botonConfirmar" onclick="captura()" id="button">Confirmar</button></div>
+      </form>
+    </div>
+  </div>
+    
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/form.js"></script>
+  <script src="assets/js/port.js"></script>
 </body>
 </html>
