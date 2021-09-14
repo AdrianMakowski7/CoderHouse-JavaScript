@@ -1,9 +1,15 @@
+
+
+h1{
+  background-color: rgb(red, green, rgb(236, 238, 239));
+}
+
 /**************************** Login*********************************/
 .contenidoLogin{
   display: flex;
   flex-direction: row;
   height: 100%;
-
+color: rgb(106, 190, 106);
 }
 .contenido1Login{
   margin:  0 auto;
@@ -16,26 +22,47 @@
   padding: 25vh;
 }
 
-@media (min-width: 700px) {
-  
-} {
-  .contenidoLogin{
-    display: block;
-  }
-  .contenido2Login{
-    padding: auto;
-  }
-  .contenido1Login{
-    padding: auto;
-  }
+.btnMenos{
+  border: none;
+  color: white;
+  padding: auto;
+  text-align: center;
+  display: inline-block;
+  margin: 1px 1px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
+.btnMenos:hover {
+  background-color: red;
+  color: white;
+}
 
+#btnAgregarEdu{
+  border: none;
+  color: white;
+  padding: auto;
+  text-align: center;
+  display: inline-block;
+  margin: 1px 1px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: green;
+  border-radius: 50%;
+}
+
+#tituloForm{
+  text-align: center;
+  margin: 2px auto;
+  color: rgb(red, rgb(43, 44, 43), blue);
+}
 /********************************************************************
 *************************** Formulario ******************************
 ********************************************************************/
 .formularioIngreso{
-  margin: 5px auto;
+  margin: 15px auto;
   width: 75%;
   }
 
