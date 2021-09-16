@@ -53,6 +53,11 @@ color: rgb(106, 190, 106);
   border-radius: 50%;
 }
 
+.boton-volver{
+  position: fixed;
+  top: 87% !important;
+}
+
 #tituloForm{
   text-align: center;
   margin: 2px auto;
@@ -73,7 +78,6 @@ color: rgb(106, 190, 106);
     color: #fff;
     transition: 0.4s;
     border-radius: 4px;
-    margin-left: 460px;
     margin-top: 5px;
   }
 
@@ -86,6 +90,7 @@ color: rgb(106, 190, 106);
     border-radius: 4px;
     margin-left: 77px;
     margin-top: 5px;
+    top: 90vh;
   }
 
 /**
@@ -1148,16 +1153,6 @@ section {
   background: #040b14;
 }
 
-#footer .copyright {
-  text-align: center;
-}
-
-#footer .credits {
-  padding-top: 5px;
-  text-align: center;
-  font-size: 13px;
-  color: #eaebf0;
-}
 
 @media (max-width: 1199px) {
   #footer {

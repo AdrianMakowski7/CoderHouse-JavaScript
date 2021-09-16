@@ -15,58 +15,47 @@ $(document).ready( ()=>{
   $("#instagram").val(localStorage.getItem('instagram'));
   $("#github").val(localStorage.getItem('github'));
   $("#linkedin").val(localStorage.getItem('linkedin'));
-  let animacion = $("eduAnimacion").fadeIn();
+  $(`#btnAgregarEdu`).on("click" , agregar);
   
-  $(`#btnAgregarEdu`).click(function(){
-    let institucion = $("#institucion").val();
-    let inicioInst = $("#inicioInst").val();
-    let finInst = $("#finInst").val();
-    let descripcionInst = $("#descripcionInst").val();
-    var i = 1; //ID PARA CADA FILA
-    var fila = `<tr id="row${i}" class="eduAnimacion"><td> ${institucion} </td><td> ${inicioInst} </td><td> ${finInst} </td><td> ${descripcionInst} </td><td class="text-center"><button type="button" name="remove" id="${i}" class="btnMenos btn_remove">  X  </button></td></tr>`;
-    $(`#tablaInst tr:first`).after(fila);
-    i++
-    $(".eduAnimacion").css('background-color', 'rgb(236, 238, 239)')
-    $(".eduAnimacion").animate({
-      height: "50px", 
-      width: "50px",
-      fontSize:"18px",
-      wordSpacing:"20px",      
-    },3000);
-    $("#institucion").html(institucion);
-    $("#inicioInst").html(inicioInst);
-    $("#finInst").html(finInst);
-    $("#descripcionInst").html(descripcionInst);
-  });
   
-  $(document).on('click', '.btnMenos', function() {
-    var button_id = $(this).attr("id");
-      //cuando da click obtenemos el id del boton
-      $('#row' + button_id + '').remove(); //borra la fila
-      //limpia el para que vuelva a contar las filas de la tabla
-      var nFilas = $("#mytable tr").length;
-    });
+  
 });
 
 
+function agregar(){
+  let institucion = $("#institucion").val();
+  let inicioInst = $("#inicioInst").val();
+  let finInst = $("#finInst").val();
+  let descripcionInst = $("#descripcionInst").val();
+  $("#tablaInst").append(`<tr class="eduAnimacion"><td> ${institucion} </td><td> ${inicioInst} </td><td> ${finInst} </td><td> ${descripcionInst} </td><td class="text-center"><input value=" X " type="button" class="btnMenos"></td></tr>`);
+  $(".btnMenos").on("click", borrar);
+};
 
-///////////boton confirmar////////////
-function captura() {
-  localStorage.setItem('nombre' , $("#nombre").val());
-  localStorage.setItem('apellido' , $("#apellido").val());
-  localStorage.setItem('nacimiento' , $("#nacimiento").val());
-  localStorage.setItem('edad' , $("#edad").val());
-  localStorage.setItem('telefono' , $("#telefono").val());
-  localStorage.setItem('ciudad' , $("#ciudad").val());
-  localStorage.setItem('pais' , $("#pais").val());
-  localStorage.setItem('email' , $("#email").val());
-  localStorage.setItem('cargo' , $("#cargo").val());
-  localStorage.setItem('descripcion' , $("#descripcion").val());
-  localStorage.setItem('resumen' , $("#resumen").val())
-  localStorage.setItem('twitter' , $("#twitter").val())
-  localStorage.setItem('instagram' , $("#instagram").val())
-  localStorage.setItem('github' , $("#github").val())
-  localStorage.setItem('linkedin' , $("#linkedin").val())
-  window.location="portfolio.html";
-}
+function borrar(){
+$(this).parent().parent().remove();
+}  
 
+
+  
+  
+  ///////////boton confirmar////////////
+  function captura() {
+    localStorage.setItem('nombre' , $("#nombre").val());
+    localStorage.setItem('apellido' , $("#apellido").val());
+    localStorage.setItem('nacimiento' , $("#nacimiento").val());
+    localStorage.setItem('edad' , $("#edad").val());
+    localStorage.setItem('telefono' , $("#telefono").val());
+    localStorage.setItem('ciudad' , $("#ciudad").val());
+    localStorage.setItem('pais' , $("#pais").val());
+    localStorage.setItem('email' , $("#email").val());
+    localStorage.setItem('cargo' , $("#cargo").val());
+    localStorage.setItem('descripcion' , $("#descripcion").val());
+    localStorage.setItem('resumen' , $("#resumen").val())
+    localStorage.setItem('twitter' , $("#twitter").val())
+    localStorage.setItem('instagram' , $("#instagram").val())
+    localStorage.setItem('github' , $("#github").val())
+    localStorage.setItem('linkedin' , $("#linkedin").val())
+    window.location="portfolio.html";
+  }
+  
+  

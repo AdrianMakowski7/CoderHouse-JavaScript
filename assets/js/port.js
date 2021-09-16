@@ -25,4 +25,17 @@ $(document).ready(()=>{
   $("#github1").attr(`href`, mostarGithub);
   let mostarLinkedin = localStorage.getItem("linkedin");
   $("#linkedin1").attr(`href`, mostarLinkedin);
-})
+  
+  
+/*  $("#btnEnviar").click(() =>{
+    $.post(linkUrl, datosCont, (estado)=>{
+      if(estado === "success"){
+        alert("mensaje enviado")
+      }
+    })
+  });
+})*/
+
+
+const linkUrl = "https://jsonplaceholder.typicode.com/posts"
+const datosCont = {nombreC: $("#nameContacto").val() , emailC: $("#emailContacto").val(), motivoContacto: $("#motivoContacto").val(),mensajeContacto: $("#mensajeContacto").val()}
