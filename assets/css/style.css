@@ -40,17 +40,8 @@ color: rgb(106, 190, 106);
 }
 
 #btnAgregarEdu{
-  border: none;
   color: white;
-  padding: auto;
-  text-align: center;
-  display: inline-block;
-  margin: 1px 1px;
-  cursor: pointer;
-  text-decoration: none;
-  text-transform: uppercase;
   background-color: green;
-  border-radius: 50%;
 }
 
 .boton-volver{
@@ -66,6 +57,20 @@ color: rgb(106, 190, 106);
 /********************************************************************
 *************************** Formulario ******************************
 ********************************************************************/
+
+.ocultar{
+  display: none !important;
+}
+
+.errores{
+  display: none;
+}
+
+.erroresActivos{
+  display: block !important;
+  color: red;
+}
+
 .formularioIngreso{
   margin: 15px auto;
   width: 75%;

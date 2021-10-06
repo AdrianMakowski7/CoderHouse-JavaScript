@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>iPortfolio Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,51 +15,55 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
 </head>
-
 <body>
   <div class="contact formularioIngreso">
     <div class="d-flex align-items-stretch">
-      <form role="form" class="php-email-form">
+      <form role="form" class="php-email-form" id="formularyx">
         <div>
-          <h1 id="tituloForm" >Formulario para crear Portfolio</h1>
+          <h1 id="tituloForm" >Formulario para crear Portfolio </h1>
+          <br>
         </div>
         <div class="row">
           <div class="form-group col-md-6">
-            <label for="name">(*)Nombre: </label>
-            <input type="text" class="form-control" id="nombre">
+            <label for="name">Nombre: *</label>
+            <input type="text" class="form-control" name="nombre" id="nombre">
+            <p id="errornombre" class="errores">El nombre tiene que ser de 4 a 20 digitos y solo puede contener letras</p>
           </div>
           <div class="form-group col-md-6">
-            <label for="apellido">(*)Apellido: </label>
-            <input type="text" class="form-control" id="apellido" >
+            <label for="apellido">Apellido: *</label>
+            <input type="text" class="form-control" name="apellido" id="apellido" >
+            <p id="errorapellido" class="errores">El apellido tiene que ser de 4 a 20 digitos y solo puede contener letras</p>
           </div>
         </div>
         <div class="row">
           <div class="form-group col-md-6">
-            <label for="nacimiento">(*)Fecha de nacimiento: </label>
+            <label for="nacimiento">Fecha de nacimiento:</label>
             <input type="date" class="form-control" id="nacimiento" >
           </div>
           <div class="form-group col-md-6">
-            <label for="edad">(*)Edad: </label>
+            <label for="edad">Edad: *</label>
             <input type="number" class="form-control" id="edad" >
+            <p id="erroredad" class="errores">La edad debe ser un numero valido entre 1 y 99</p>
           </div>
         </div>
         <div class="row">
           <div class="form-group col-md-4">
-            <label for="telefono">(*)Telefono: </label>
+            <label for="telefono">Telefono: *</label>
             <input type="tel" class="form-control" id="telefono" >
+            <p id="errortelefono" class="errores">El telefono debe ser un numero valido de 7 a 14 digitos</p>
           </div>
           <div class="form-group col-md-4">
-            <label for="ciudad">(*)Ciudad: </label>
+            <label for="ciudad">Ciudad: *</label>
             <input type="text" class="form-control" id="ciudad" >
+            <p id="errorciudad" class="errores">El nombre de la ciudad tiene que ser de 4 a 20 digitos y solo puede contener letras</p>
           </div>
           <div class="form-group col-md-4">
             <label for="pais">Pais: </label>
             <input type="text" class="form-control" id="pais" >
+            <p id="errorpais" class="errores">El nombre del pais tiene que ser de 4 a 20 digitos y solo puede contener letras</p>
           </div>
         </div>
         <div>
@@ -89,12 +89,14 @@
         </div>
         <div class="row">
           <div class="form-group col-md-6">
-            <label for="email">(*)Email: </label>
+            <label for="email">Email: *</label>
             <input type="email" class="form-control" id="email" >
+            <p id="erroremail" class="errores">Debe ingresar un Email valido</p>
           </div>
           <div class="form-group col-md-6">
-            <label for="cargo">(*)Cargo: </label>
-            <input type="text" class="form-control" id="cargo" >
+            <label for="competencia">Competencia: *</label>
+            <input type="text" class="form-control" id="competencia" >
+            <p id="errorcompetencia" class="errores">Tienen que ser entre 4 y 50 caracteres.<br> En el caso de ser mas de una separar con una coma (,) </p>
           </div>
         </div>
         <div class="form-group">
@@ -114,12 +116,12 @@
               <input type="text" class="form-control" id="institucion" >
             </div>
             <div class="form-group col-md-1">
-              <label for="name">Inicio: </label>
-              <input type="number" min="1900" max="2099" step="1" value="2016" class="form-control fs-25" id="inicioInst" >
+              <label>Inicio: </label>
+              <input type="text" min="1900" max="2099" step="1" value="2016" class="form-control fs-25" id="inicioInst" >
             </div>
             <div class="form-group col-md-1">
-              <label for="name">Fin: </label>
-              <input type="number" class="form-control" id="finInst" >
+              <label>Fin: </label>
+              <input type="text" class="form-control" id="finInst" >
             </div>
             <div class="form-group col-md-6">
               <label for="name">Descripcion: </label>
@@ -138,13 +140,53 @@
             </tr>
           </table>
         </div>
+        <div id="contenedorExplaboral">
+          <h5>Experiencia laboral <input type="button" id="btnAgregarExp" value="+"></h5>
+          <div class="row"> 
+            <div class="form-group col-md-4">
+              <label for="Institucion">Empresa: </label>
+              <input type="text" class="form-control" id="empresaExp" >
+            </div>
+            <div class="form-group col-md-1">
+              <label>Inicio: </label>
+              <input type="text" min="1900" max="2099" step="1" value="2016" class="form-control fs-25" id="inicioExp" >
+            </div>
+            <div class="form-group col-md-1">
+              <label>Fin: </label>
+              <input type="text" class="form-control" id="finExp" >
+            </div>
+            <div class="form-group col-md-6">
+              <label for="name">Descripcion: </label>
+              <input type="text" class="form-control" id="descripcionExp" >
+            </div>
+          </div>
+        </div>
+        <div class="form-group table-responsive">
+          <table  id="tablaExp" class="table table-bordered table-hover">
+            <tr>
+              <th class="form-group col-md-3">Institucion</th>
+              <th class="form-group col-md-1">Inicio</th>
+              <th class="form-group col-md-1">Fin</th>
+              <th class="form-group col-md-6">Descripción</th>
+              <th class="form-group col-md-1">Eliminar</th>
+            </tr>
+          </table>
+        </div>
+        <div id="errorForm">
+          <p></p>
+        </div>
         <div class="form-group text-center">
-          <input type='button'class=" botonConfirmar" id="buttonConfirmar" value="Confirmar">
+          <p id="errormensaje" class="errores">Debe completar los datos marcados con * para poder continuar</p>
+          <input type='submit'class=" botonConfirmar" id="buttonConfirmar" value="Confirmar">
         </div>
       </form>
     </div>
   </div>
+  <!--Incluir la librería jQuery-->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <!--Incluir el plugin jQuery Validate-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
